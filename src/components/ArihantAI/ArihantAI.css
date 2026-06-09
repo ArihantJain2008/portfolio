@@ -1,0 +1,265 @@
+.arihant-ai {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(90vw, 420px);
+  max-height: 75vh;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 20;
+  pointer-events: auto;
+}
+
+.arihant-ai__shell {
+  display: grid;
+  gap: 18px;
+
+  padding: 22px;
+
+  border-radius: 28px;
+
+  border: 1px solid rgba(97, 218, 251, 0.28);
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(0, 229, 255, 0.15),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 20, 34, 0.96),
+      rgba(3, 8, 15, 0.96)
+    );
+
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.45),
+    0 0 42px rgba(97, 218, 251, 0.16);
+
+  backdrop-filter: blur(20px);
+
+  max-height: 75vh;
+
+  overflow: hidden;
+}
+
+.arihant-ai__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.arihant-ai__eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(97, 218, 251, 0.72);
+  margin-bottom: 8px;
+}
+
+.arihant-ai__title {
+  font-size: 1.8rem;
+  line-height: 1;
+}
+
+.arihant-ai__close,
+.arihant-ai__submit,
+.arihant-ai__suggestion,
+.arihant-ai__quick-question {
+  border: 1px solid rgba(97, 218, 251, 0.22);
+  background: rgba(97, 218, 251, 0.08);
+  color: #e8fbff;
+  font: inherit;
+  cursor: pointer;
+
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.arihant-ai__close,
+.arihant-ai__submit {
+  padding: 10px 14px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.arihant-ai__close:hover,
+.arihant-ai__submit:hover,
+.arihant-ai__suggestion:hover,
+.arihant-ai__quick-question:hover {
+  transform: translateY(-1px);
+
+  border-color:
+    rgba(97, 218, 251, 0.46);
+
+  background:
+    rgba(97, 218, 251, 0.14);
+}
+
+.arihant-ai__conversation {
+  max-height: 220px;
+
+  overflow-y: auto;
+
+  display: grid;
+  gap: 12px;
+
+  padding-right: 6px;
+}
+
+.arihant-ai__conversation::-webkit-scrollbar {
+  width: 6px;
+}
+
+.arihant-ai__conversation::-webkit-scrollbar-thumb {
+  background:
+    rgba(97, 218, 251, 0.28);
+
+  border-radius: 999px;
+}
+
+.arihant-ai__message {
+  display: grid;
+  gap: 8px;
+
+  padding: 14px 16px;
+
+  border-radius: 20px;
+}
+
+.arihant-ai__message--assistant {
+  background:
+    rgba(255, 255, 255, 0.05);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.06);
+}
+
+.arihant-ai__message--user {
+  margin-left: 44px;
+
+  background:
+    rgba(97, 218, 251, 0.12);
+
+  border:
+    1px solid rgba(97, 218, 251, 0.16);
+}
+
+.arihant-ai__speaker {
+  font-size: 11px;
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(97, 218, 251, 0.72);
+}
+
+.arihant-ai__text {
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.arihant-ai__suggestions,
+.arihant-ai__quick-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.arihant-ai__suggestion,
+.arihant-ai__quick-question {
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+}
+
+.arihant-ai__composer {
+  display: grid;
+  gap: 14px;
+}
+
+.arihant-ai__form {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    auto;
+
+  gap: 10px;
+}
+
+.arihant-ai__input {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border-radius: 16px;
+
+  border:
+    1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    rgba(255, 255, 255, 0.04);
+
+  color: #ffffff;
+
+  font: inherit;
+}
+
+.arihant-ai__input::placeholder {
+  color:
+    rgba(255, 255, 255, 0.4);
+}
+
+.arihant-ai__input:focus-visible,
+.arihant-ai__close:focus-visible,
+.arihant-ai__submit:focus-visible,
+.arihant-ai__suggestion:focus-visible,
+.arihant-ai__quick-question:focus-visible {
+  outline:
+    2px solid rgba(97, 218, 251, 0.7);
+
+  outline-offset: 2px;
+}
+
+@media (max-width: 1200px) {
+  .arihant-ai {
+    left: 70%;
+  }
+}
+
+@media (max-width: 900px) {
+  .arihant-ai {
+    top: 60%;
+    left: 50%;
+
+    width: min(92vw, 420px);
+  }
+}
+
+@media (max-width: 700px) {
+  .arihant-ai {
+    width: min(92vw, 380px);
+  }
+
+  .arihant-ai__shell {
+    padding: 18px;
+  }
+
+  .arihant-ai__form {
+    grid-template-columns: 1fr;
+  }
+
+  .arihant-ai__message--user {
+    margin-left: 0;
+  }
+}

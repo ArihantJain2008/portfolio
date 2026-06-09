@@ -18,7 +18,7 @@ export const techNodes: TechNodeData[] = [
     id: "react",
     name: "React",
     color: "#61DAFB",
-    orbitRadius: 2.55,
+    orbitRadius: 1.66,
     orbitSpeed: 0.46,
     angleOffset: 0.35,
     projects: [
@@ -31,7 +31,7 @@ export const techNodes: TechNodeData[] = [
     id: "typescript",
     name: "TypeScript",
     color: "#3178C6",
-    orbitRadius: 2.55,
+    orbitRadius: 1.66,
     orbitSpeed: 0.38,
     angleOffset: 2.35,
     projects: [
@@ -43,7 +43,7 @@ export const techNodes: TechNodeData[] = [
     id: "threejs",
     name: "Three.js",
     color: "#F7F7F7",
-    orbitRadius: 2.55,
+    orbitRadius: 1.66,
     orbitSpeed: 0.42,
     angleOffset: 4.3,
     projects: [
@@ -54,7 +54,7 @@ export const techNodes: TechNodeData[] = [
     id: "nodejs",
     name: "Node.js",
     color: "#68A063",
-    orbitRadius: 1.98,
+    orbitRadius: 1.29,
     orbitSpeed: 0.7,
     angleOffset: 0.8,
     projects: [
@@ -66,7 +66,7 @@ export const techNodes: TechNodeData[] = [
     id: "mongodb",
     name: "MongoDB",
     color: "#13AA52",
-    orbitRadius: 1.98,
+    orbitRadius: 1.29,
     orbitSpeed: 0.62,
     angleOffset: 2.5,
     projects: [
@@ -77,7 +77,7 @@ export const techNodes: TechNodeData[] = [
     id: "gsap",
     name: "GSAP",
     color: "#88CE02",
-    orbitRadius: 1.98,
+    orbitRadius: 1.29,
     orbitSpeed: 0.76,
     angleOffset: 4.15,
     projects: [
@@ -88,7 +88,7 @@ export const techNodes: TechNodeData[] = [
     id: "ai",
     name: "AI",
     color: "#FF7A18",
-    orbitRadius: 1.98,
+    orbitRadius: 1.29,
     orbitSpeed: 0.68,
     angleOffset: 5.55,
     projects: [

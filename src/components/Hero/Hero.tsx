@@ -5,6 +5,7 @@ import {
   getTechNodeById,
   techNodes,
 } from "../../data/techStack";
+import ArihantAI from "../ArihantAI/ArihantAI";
 import Character from "../Character/Character";
 import type { HoveredTechNode } from "../Character/Scene";
 import TechInfo from "../TechInfo/TechInfo";
@@ -14,6 +15,7 @@ import "./Hero.css";
 function Hero() {
   const [selectedTechId, setSelectedTechId] = useState<string | null>(null);
   const [hoveredNode, setHoveredNode] = useState<HoveredTechNode | null>(null);
+  const [isAiOpen, setIsAiOpen] = useState(false);
 
   const selectedTechNode = selectedTechId
     ? getTechNodeById(selectedTechId) ?? null
@@ -66,23 +68,27 @@ function Hero() {
           techNodes={techNodes}
           onNodeSelect={handleNodeSelect}
           onNodeHover={handleNodeHover}
+          onCoreActivate={() => setIsAiOpen(true)}
         />
         <TechLabel hoveredNode={hoveredNode} />
+        <ArihantAI isOpen={isAiOpen} onClose={() => setIsAiOpen(false)} />
       </div>
 
       <div className="hero-right">
         <p className="hero-copy">
           Building futuristic web experiences using React, Three.js, and AI.
-          Hover the graph to inspect the stack, then click a node to lock in its
-          project context.
+          Hover the graph to inspect the stack, click a node to lock project
+          context, or click the AI Core to ask Arihant directly.
         </p>
 
-        <TechInfo
-          techNode={selectedTechNode}
-          hoveredTechNode={hoveredTechNode}
-          highlightedProjects={highlightedProjects}
-          onClose={() => setSelectedTechId(null)}
-        />
+        {selectedTechNode ? (
+          <TechInfo
+            techNode={selectedTechNode}
+            hoveredTechNode={hoveredTechNode}
+            highlightedProjects={highlightedProjects}
+            onClose={() => setSelectedTechId(null)}
+          />
+        ) : null}
       </div>
     </section>
   );

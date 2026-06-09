@@ -2,7 +2,7 @@ import type { TechNodeData } from "../../data/techStack";
 import "./TechInfo.css";
 
 interface TechInfoProps {
-  techNode: TechNodeData | null;
+  techNode: TechNodeData;
   hoveredTechNode: TechNodeData | null;
   highlightedProjects: readonly string[];
   onClose?: () => void;
@@ -14,19 +14,6 @@ function TechInfo({
   highlightedProjects,
   onClose,
 }: TechInfoProps) {
-  if (!techNode) {
-    return (
-      <aside className="tech-info tech-info--placeholder" aria-live="polite">
-        <p className="tech-info__eyebrow">Technology Graph</p>
-        <h2 className="tech-info__title">Select a node</h2>
-        <p className="tech-info__empty">
-          Click any orbiting technology to pin its projects here. Hovering the
-          graph will reveal labels, glowing links, and related relationships.
-        </p>
-      </aside>
-    );
-  }
-
   const activeHoverName =
     hoveredTechNode && hoveredTechNode.id !== techNode.id
       ? hoveredTechNode.name

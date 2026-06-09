@@ -7,9 +7,15 @@ interface CharacterProps {
   techNodes: readonly TechNodeData[];
   onNodeSelect: (nodeId: string) => void;
   onNodeHover: (node: HoveredTechNode | null) => void;
+  onCoreActivate: () => void;
 }
 
-function Character({ techNodes, onNodeSelect, onNodeHover }: CharacterProps) {
+function Character({
+  techNodes,
+  onNodeSelect,
+  onNodeHover,
+  onCoreActivate,
+}: CharacterProps) {
   const containerRef = useRef<HTMLDivElement>(null);
 
   const handleNodeSelect = useEffectEvent((nodeId: string) => {
@@ -18,6 +24,10 @@ function Character({ techNodes, onNodeSelect, onNodeHover }: CharacterProps) {
 
   const handleNodeHover = useEffectEvent((node: HoveredTechNode | null) => {
     onNodeHover(node);
+  });
+
+  const handleCoreActivate = useEffectEvent(() => {
+    onCoreActivate();
   });
 
   useEffect(() => {
@@ -29,6 +39,7 @@ function Character({ techNodes, onNodeSelect, onNodeHover }: CharacterProps) {
       techNodes,
       onNodeSelect: handleNodeSelect,
       onNodeHover: handleNodeHover,
+      onCoreActivate: handleCoreActivate,
     });
 
     return cleanup;

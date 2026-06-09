@@ -33,6 +33,7 @@ interface SceneOptions {
   techNodes: readonly TechNodeData[];
   onNodeSelect?: (nodeId: string) => void;
   onNodeHover?: (node: HoveredTechNode | null) => void;
+  onCoreActivate?: () => void;
 }
 
 interface SceneConnection {
@@ -126,7 +127,7 @@ function createTechNode(data: TechNodeData): SceneTechNode {
   const group = new THREE.Group();
 
   const body = new THREE.Mesh(
-    new THREE.SphereGeometry(0.18, 32, 32),
+    new THREE.SphereGeometry(0.15, 32, 32),
     new THREE.MeshPhysicalMaterial({
       color: data.color,
       emissive: data.color,
@@ -141,7 +142,7 @@ function createTechNode(data: TechNodeData): SceneTechNode {
   );
 
   const glow = new THREE.Mesh(
-    new THREE.SphereGeometry(0.32, 24, 24),
+    new THREE.SphereGeometry(0.26, 24, 24),
     new THREE.MeshBasicMaterial({
       color: data.color,
       transparent: true,
@@ -201,7 +202,7 @@ export function initScene(
     0.1,
     1000
   );
-  camera.position.z = 4;
+  camera.position.z = 3.7;
 
   const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
@@ -210,7 +211,7 @@ export function initScene(
   container.appendChild(renderer.domElement);
 
   const core = new THREE.Mesh(
-    new THREE.SphereGeometry(1, 128, 128),
+    new THREE.SphereGeometry(0.75, 128, 128),
     new THREE.MeshPhysicalMaterial({
       color: "#00E5FF",
       emissive: "#00E5FF",
@@ -222,12 +223,13 @@ export function initScene(
       clearcoatRoughness: 0,
     })
   );
+  core.userData.kind = "core";
   scene.add(core);
 
   const coreMaterial = core.material;
 
   const ring = new THREE.Mesh(
-    new THREE.TorusGeometry(1.72, 0.028, 24, 160),
+    new THREE.TorusGeometry(1.28, 0.024, 24, 160),
     new THREE.MeshBasicMaterial({ color: "#00E5FF" })
   );
   ring.rotation.x = Math.PI / 2.5;
@@ -307,6 +309,12 @@ export function initScene(
     return sceneTechNodes.find((techNode) => techNode.data.id === nodeId);
   };
 
+  const isCoreHit = (): boolean => {
+    raycaster.setFromCamera(pointer, camera);
+    const [intersection] = raycaster.intersectObject(core, false);
+    return Boolean(intersection);
+  };
+
   const handleMouseMove = (event: MouseEvent) => {
     const nx = (event.clientX / window.innerWidth) * 2 - 1;
     const ny = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -332,6 +340,11 @@ export function initScene(
 
     if (clickedNode) {
       options.onNodeSelect?.(clickedNode.data.id);
+      return;
+    }
+
+    if (isCoreHit()) {
+      options.onCoreActivate?.();
     }
   };
 
@@ -362,9 +375,9 @@ export function initScene(
     mouse.smoothX = damp(mouse.smoothX, mouse.rawX, 3.5, dt);
     mouse.smoothY = damp(mouse.smoothY, mouse.rawY, 3.5, dt);
 
-    const driftX = organicDrift(time, 0, 0.14);
-    const driftY = organicDrift(time, 1.57, 0.1);
-    const driftZ = organicDrift(time, 3.14, 0.06);
+    const driftX = organicDrift(time, 0, 0.11);
+    const driftY = organicDrift(time, 1.57, 0.08);
+    const driftZ = organicDrift(time, 3.14, 0.045);
 
     core.position.set(driftX, driftY, driftZ);
 
@@ -425,11 +438,11 @@ export function initScene(
 
     sceneTechNodes.forEach((techNode) => {
       const orbitAngle = time * techNode.data.orbitSpeed + techNode.data.angleOffset;
-      const orbitTilt = techNode.data.orbitRadius > 2.2 ? 0.18 : -0.12;
+      const orbitTilt = techNode.data.orbitRadius > 1.5 ? 0.12 : -0.08;
       const verticalOffset =
-        Math.sin(orbitAngle * 1.7 + techNode.data.angleOffset) * 0.14 +
-        Math.sin(time * 0.6 + techNode.data.angleOffset) * 0.04;
-      const depthOffset = Math.sin(orbitAngle * 0.85) * 0.16;
+        Math.sin(orbitAngle * 1.7 + techNode.data.angleOffset) * 0.09 +
+        Math.sin(time * 0.6 + techNode.data.angleOffset) * 0.03;
+      const depthOffset = Math.sin(orbitAngle * 0.85) * 0.1;
 
       techNode.group.position.set(
         core.position.x + Math.cos(orbitAngle) * techNode.data.orbitRadius,
@@ -451,7 +464,8 @@ export function initScene(
 
     const hoveredNode = getHoveredNode();
     hoveredNodeId = hoveredNode?.data.id ?? null;
-    renderer.domElement.style.cursor = hoveredNodeId ? "pointer" : "default";
+    const coreHovered = !hoveredNode && isCoreHit();
+    renderer.domElement.style.cursor = hoveredNodeId || coreHovered ? "pointer" : "default";
 
     if (hoveredNode) {
       const position = projectToCanvas(hoveredNode.group, camera, renderer.domElement);
