@@ -86,3 +86,23 @@
     0 0 40px rgba(0, 229, 255, 0.3);
 }
 
+.navbar {
+  transition:
+    transform 0.35s ease,
+    opacity 0.35s ease;
+}
+
+.navbar-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.navbar-hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+}
+
+.navbar {
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(14px);
+}
