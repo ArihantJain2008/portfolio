@@ -22,11 +22,11 @@ export const techNodes: TechNodeData[] = [
     orbitSpeed: 0.46,
     angleOffset: 0.35,
     projects: [
+      "AI Portfolio Website",
       "Anime Release Tracker",
-      "Cipher 2.0",
-      "Portfolio Website",
     ],
   },
+
   {
     id: "typescript",
     name: "TypeScript",
@@ -35,10 +35,10 @@ export const techNodes: TechNodeData[] = [
     orbitSpeed: 0.38,
     angleOffset: 2.35,
     projects: [
-      "Cipher 2.0",
-      "Portfolio Website",
+      "AI Portfolio Website",
     ],
   },
+
   {
     id: "threejs",
     name: "Three.js",
@@ -47,9 +47,10 @@ export const techNodes: TechNodeData[] = [
     orbitSpeed: 0.42,
     angleOffset: 4.3,
     projects: [
-      "Portfolio Website",
+      "AI Portfolio Website",
     ],
   },
+
   {
     id: "nodejs",
     name: "Node.js",
@@ -59,9 +60,9 @@ export const techNodes: TechNodeData[] = [
     angleOffset: 0.8,
     projects: [
       "Anime Release Tracker",
-      "Cipher 2.0",
     ],
   },
+
   {
     id: "mongodb",
     name: "MongoDB",
@@ -70,30 +71,45 @@ export const techNodes: TechNodeData[] = [
     orbitSpeed: 0.62,
     angleOffset: 2.5,
     projects: [
-      "Cipher 2.0",
+      "Anime Release Tracker",
     ],
   },
+
   {
-    id: "gsap",
-    name: "GSAP",
-    color: "#88CE02",
+    id: "php",
+    name: "PHP",
+    color: "#777BB4",
     orbitRadius: 1.29,
     orbitSpeed: 0.76,
     angleOffset: 4.15,
     projects: [
-      "Portfolio Website",
+      "Online Recruitment System",
     ],
   },
+
   {
-    id: "ai",
-    name: "AI",
-    color: "#FF7A18",
+    id: "mysql",
+    name: "MySQL",
+    color: "#00758F",
     orbitRadius: 1.29,
     orbitSpeed: 0.68,
     angleOffset: 5.55,
     projects: [
-      "Anime Release Tracker",
-      "Portfolio Website",
+      "Online Recruitment System",
+    ],
+  },
+
+  {
+    id: "javascript",
+    name: "JavaScript",
+    color: "#F7DF1E",
+    orbitRadius: 1.9,
+    orbitSpeed: 0.32,
+    angleOffset: 1.6,
+    projects: [
+      "AI Portfolio Website",
+      "Expense Tracker",
+      "Online Recruitment System",
     ],
   },
 ];
