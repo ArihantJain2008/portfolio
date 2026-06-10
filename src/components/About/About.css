@@ -87,3 +87,13 @@
 .stat-card span {
   color: rgba(255,255,255,0.75);
 }
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 80px 20px;
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+}

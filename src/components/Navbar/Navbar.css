@@ -106,3 +106,28 @@
   background: rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(14px);
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .nav-links {
+    gap: 16px;
+  }
+
+  .nav-links li {
+    font-size: 14px;
+  }
+
+  .resume-btn {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none;
+  }
+}

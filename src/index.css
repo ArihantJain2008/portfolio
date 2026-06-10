@@ -48,3 +48,15 @@ html::-webkit-scrollbar,
 body::-webkit-scrollbar {
   display: none;
 }
+
+::selection {
+  background: rgba(0, 229, 255, 0.9);
+  color: #000;
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: rgba(0, 229, 255, 0.9);
+  color: #000;
+  text-shadow: none;
+}

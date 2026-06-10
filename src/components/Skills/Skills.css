@@ -37,7 +37,7 @@
   display: grid;
 
   grid-template-columns:
-    repeat(auto-fit, minmax(320px, 1fr));
+repeat(auto-fit, minmax(260px, 1fr));
 
   gap: 30px;
 
@@ -112,4 +112,10 @@
   color: var(--primary);
 
   font-size: 15px;
+}
+
+@media (max-width: 768px) {
+  .skills {
+    padding: 80px 20px;
+  }
 }
