@@ -16,7 +16,6 @@ const suggestions = {
   about: [
     "What skills do you have?",
     "What projects use React?",
-    "Tell me about Cipher 2.0",
   ],
 
   skills: [
@@ -27,7 +26,6 @@ const suggestions = {
 
   projects: [
     "Tell me about the Portfolio Website",
-    "What technologies are used in Cipher 2.0?",
     "Show React projects",
   ],
 
@@ -93,7 +91,7 @@ export function queryPortfolio(
       intent: "technology",
 
       answer:
-        "I use React extensively. Projects built with React include Anime Release Tracker, Cipher 2.0, and this Portfolio Website.",
+        "I use React extensively. Projects built with React include Anime Release Tracker, and this Portfolio Website.",
 
       suggestions:
         suggestions.projects,
@@ -118,25 +116,6 @@ export function queryPortfolio(
         suggestions.projects,
     };
   }
-
-  // ===================
-  // CIPHER
-  // ===================
-
-  if (
-    query.includes("cipher")
-  ) {
-    return {
-      intent: "projects",
-
-      answer:
-        "Cipher 2.0 is a full-stack project built using React, Node.js, Express, and MongoDB. It focuses on modern architecture and scalable web application development.",
-
-      suggestions:
-        suggestions.projects,
-    };
-  }
-
   // ===================
   // PORTFOLIO
   // ===================
@@ -207,7 +186,7 @@ export function queryPortfolio(
       "Who are you?",
       "What skills do you have?",
       "What projects use React?",
-      "Tell me about Cipher 2.0",
+      "Tell me about your experience",
     ],
   };
 }
