@@ -1,6 +1,11 @@
 import { startTransition, useState } from "react";
 
 import {
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+
+import {
   getSharedProjectsBetweenTechnologies,
   getTechNodeById,
   techNodes,
@@ -56,12 +61,33 @@ function Hero() {
   };
 
   return (
-    <section className="hero">
+    <section id="home" className="hero">
       <div className="hero-left">
-        <h3>Hello, I'm</h3>
-        <h1>Arihant Jain</h1>
-        <p>Full Stack Developer</p>
-      </div>
+  <h3>Hello, I'm</h3>
+  <h1>Arihant Jain</h1>
+
+  <p>Full Stack Developer</p>
+
+  <div className="social-links">
+    <a
+      href="https://github.com/ArihantJain2008?tab=overview&from=2026-06-01&to=2026-06-09"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+    >
+      <FaGithub />
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/arihant-jain-348501215/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="LinkedIn"
+    >
+      <FaLinkedin />
+    </a>
+  </div>
+</div>
 
       <div className="hero-center">
         <Character
@@ -73,7 +99,6 @@ function Hero() {
         <TechLabel hoveredNode={hoveredNode} />
         <ArihantAI isOpen={isAiOpen} onClose={() => setIsAiOpen(false)} />
       </div>
-
       <div className="hero-right">
         <p className="hero-copy">
           Building futuristic web experiences using React, Three.js, and AI.

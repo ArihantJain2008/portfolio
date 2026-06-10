@@ -35,6 +35,15 @@
   list-style: none;
 }
 
+.nav-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #00e5ff;
+} 
+
 .nav-links li {
   font-size: 16px;
   cursor: pointer;
@@ -47,6 +56,10 @@
 }
 
 .resume-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   padding: 12px 24px;
 
   background: transparent;
@@ -56,6 +69,8 @@
   border-radius: 30px;
 
   color: #00e5ff;
+
+  text-decoration: none;
 
   cursor: pointer;
 
@@ -70,3 +85,4 @@
     0 0 15px rgba(0, 229, 255, 0.6),
     0 0 40px rgba(0, 229, 255, 0.3);
 }
+

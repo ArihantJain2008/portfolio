@@ -1,0 +1,39 @@
+.projects {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding: 80px;
+}
+
+.projects h2 {
+  text-align: center;
+
+  color: var(--primary);
+
+  font-size: 60px;
+
+  margin-bottom: 60px;
+}
+
+.project-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 25px;
+}
+
+.project-card {
+  padding: 30px;
+
+  border-radius: 20px;
+
+  border: 1px solid rgba(0,229,255,0.15);
+
+  background: rgba(255,255,255,0.03);
+}

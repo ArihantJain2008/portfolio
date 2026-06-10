@@ -1,0 +1,29 @@
+.about {
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 80px 20px;
+}
+
+.about h2 {
+  font-size: 60px;
+  margin-bottom: 20px;
+
+  color: var(--primary);
+}
+
+.about p {
+  max-width: 800px;
+
+  font-size: 22px;
+  line-height: 1.8;
+
+  opacity: 0.8;
+}

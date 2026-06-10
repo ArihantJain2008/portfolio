@@ -10,7 +10,7 @@ import gsap from "gsap";
 import {
   queryPortfolio,
   type PortfolioQueryResult,
-} from "../../lib/queryEngine";
+} from "../../data/portfolioQuery";
 import "./ArihantAI.css";
 
 type MessageRole = "assistant" | "user";
