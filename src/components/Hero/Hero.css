@@ -33,9 +33,15 @@
 }
 
 .hero-left h1 {
-  font-size: var(--hero-heading);
-  line-height: 0.95;
+  display: flex;
+  flex-direction: column;
+  line-height: 0.9;
   text-transform: uppercase;
+  font-size: 400%;
+}
+
+.hero-left h1 span {
+  display: block;
 }
 
 .hero-left p {

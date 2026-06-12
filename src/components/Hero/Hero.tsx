@@ -64,7 +64,10 @@ function Hero() {
     <section id="home" className="hero">
       <div className="hero-left">
   <h3>Hello, I'm</h3>
-  <h1>Arihant Jain</h1>
+  <h1>
+  <span>Arihant</span>
+  <span>Jain</span>
+</h1>
 
   <p>Full Stack Developer</p>
 
