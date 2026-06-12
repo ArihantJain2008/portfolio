@@ -126,5 +126,17 @@
   .tech-info {
     width: 100%;
     max-width: none;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .tech-info {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .tech-info__header {
+    align-items: flex-start;
   }
 }

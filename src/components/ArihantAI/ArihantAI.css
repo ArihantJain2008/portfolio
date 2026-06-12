@@ -1,14 +1,10 @@
 .arihant-ai {
   position: absolute;
-
   top: 50%;
   left: 50%;
-
   width: min(90vw, 420px);
   max-height: 75vh;
-
   transform: translate(-50%, -50%);
-
   z-index: 20;
   pointer-events: auto;
 }
@@ -233,15 +229,14 @@
 
 @media (max-width: 1200px) {
   .arihant-ai {
-    left: 70%;
+    left: 50%;
   }
 }
 
 @media (max-width: 900px) {
   .arihant-ai {
-    top: 60%;
+    top: 56%;
     left: 50%;
-
     width: min(92vw, 420px);
   }
 }
@@ -261,5 +256,22 @@
 
   .arihant-ai__message--user {
     margin-left: 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .arihant-ai {
+    width: min(94vw, 360px);
+    max-height: 78vh;
+  }
+
+  .arihant-ai__shell {
+    gap: 14px;
+    padding: 16px;
+    border-radius: 22px;
+  }
+
+  .arihant-ai__title {
+    font-size: 1.4rem;
   }
 }

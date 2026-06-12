@@ -5,6 +5,12 @@
   --primary-glow: rgba(0, 229, 255, 0.4);
   --bg: #050505;
   --text: #ffffff;
+  --section-padding-inline: clamp(16px, 5vw, 80px);
+  --section-padding-block: clamp(88px, 12vw, 120px);
+  --section-max-width: 1440px;
+  --body-copy: clamp(1rem, 2vw, 1.2rem);
+  --section-heading: clamp(2rem, 5vw, 4rem);
+  --hero-heading: clamp(2.5rem, 8vw, 6rem);
 }
 
 * {
@@ -15,18 +21,21 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background: var(--bg);
   color: var(--text);
   font-family: "Space Grotesk", sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
+  min-width: 320px;
 }
 
 #root {
   width: 100%;
   min-height: 100vh;
+  overflow-x: clip;
 }
 
 a {
@@ -36,6 +45,24 @@ a {
 
 button {
   font-family: inherit;
+}
+
+img,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+span,
+a,
+button {
+  overflow-wrap: anywhere;
 }
 
 html,
