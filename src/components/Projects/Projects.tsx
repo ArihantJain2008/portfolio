@@ -75,6 +75,36 @@ export default function Projects() {
         </div>
 
         <div className="project-card">
+  <h3>Origin</h3>
+
+  <p>
+    Desktop developer workspace for organizing projects,
+    analyzing codebases, and launching development workflows
+    from a single place, built with a React frontend and
+    Rust-powered Tauri backend.
+  </p>
+
+  <div className="project-tech">
+    <span>React</span>
+    <span>TypeScript</span>
+    <span>Rust</span>
+    <span>Tauri</span>
+    <span>SQLite</span>
+  </div>
+
+  <div className="project-links">
+    <a
+      href="https://github.com/ArihantJain2008/origin"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <FaGithub />
+      <span>View Code</span>
+    </a>
+  </div>
+</div>
+
+        <div className="project-card">
           <h3>Online Recruitment System</h3>
 
           <p>

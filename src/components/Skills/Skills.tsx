@@ -28,6 +28,8 @@ export default function Skills() {
             CSS
             <br />
             GSAP
+            <br />
+            Zustand
           </p>
         </div>
 
@@ -37,12 +39,16 @@ export default function Skills() {
             Node.js
             <br />
             Express
+            <br/>
+            Rust
           </p>
         </div>
 
         <div className="skill-card">
           <h3>Database</h3>
           <p>MongoDB</p>
+          <br/>
+          <p>SQLite</p>
         </div>
 
         <div className="skill-card">
@@ -51,6 +57,8 @@ export default function Skills() {
             Git
             <br />
             GitHub
+            <br />
+            Tauri
             <br />
             VS Code
           </p>
